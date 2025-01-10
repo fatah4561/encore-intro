@@ -4,7 +4,6 @@ import { fileURLToPath } from "node:url";
 import { availableParallelism } from "node:os";
 
 import { get as getImpl0 } from "../../../../../hello/hello";
-import * as hello_service from "../../../../../hello/encore.service";
 
 const handlers: Handler[] = [
     {
@@ -17,7 +16,7 @@ const handlers: Handler[] = [
             streamingResponse: false,
         },
         endpointOptions: {"expose":true,"auth":true,"isRaw":false,"isStream":false},
-        middlewares: hello_service.default.cfg.middlewares || [],
+        middlewares: [],
     },
 ];
 

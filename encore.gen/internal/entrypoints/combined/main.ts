@@ -3,7 +3,6 @@ import { registerGateways, registerHandlers, run, type Handler } from "encore.de
 import { gateway as api_gatewayGW } from "../../../../hello/auth";
 import { greeting as foo_greetingImpl0 } from "../../../../foo/foo";
 import { get as hello_getImpl1 } from "../../../../hello/hello";
-import * as hello_service from "../../../../hello/encore.service";
 import * as foo_service from "../../../../foo/encore.service";
 
 const gateways: any[] = [
@@ -33,7 +32,7 @@ const handlers: Handler[] = [
             streamingResponse: false,
         },
         endpointOptions: {"expose":true,"auth":true,"isRaw":false,"isStream":false},
-        middlewares: hello_service.default.cfg.middlewares || [],
+        middlewares: [],
     },
 ];
 
